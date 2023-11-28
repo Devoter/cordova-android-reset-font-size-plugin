@@ -24,7 +24,7 @@ public class ResetFontSize extends CordovaPlugin {
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
 
-    WebView wV = (WebView) webView;
+    WebView wV = (WebView) webView.getView();
     WebSettings settings = wV.getSettings();
 
     settings.setTextZoom(100);
