@@ -37,6 +37,8 @@ public class ResetFontSize extends CordovaPlugin {
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if ("reset".equals(action)) {
       this.resetFontSize(callbackContext);
+
+      return true;
     }
 
     return false;
