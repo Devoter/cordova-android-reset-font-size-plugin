@@ -27,10 +27,6 @@ public class ResetFontSize extends CordovaPlugin {
     super.initialize(cordova, webView);
 
     wV = (WebView) webView.getView();
-    WebSettings settings = wV.getSettings();
-
-    settings.setTextZoom(100);
-    settings.setSupportZoom(false);
   }
 
   @Override
@@ -45,17 +41,15 @@ public class ResetFontSize extends CordovaPlugin {
   }
 
   private void resetFontSize(CallbackContext callbackContext) {
-    try {
-      WebSettings settings = wV.getSettings();
+    wV.post(new Runnable() {
+      public void run() {
+        WebSettings settings = wV.getSettings();
 
-      settings.setTextZoom(100);
-      settings.setSupportZoom(false);
-    } catch (Exception e) {
-      callbackContext.error("failed");
+        settings.setTextZoom(100);
+        settings.setSupportZoom(false);
 
-      return;
-    }
-
-    callbackContext.success("font size has been resetted");
+        callbackContext.success();
+      }
+    });
   }
 }
