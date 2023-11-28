@@ -45,11 +45,17 @@ public class ResetFontSize extends CordovaPlugin {
   }
 
   private void resetFontSize(CallbackContext callbackContext) {
-    WebSettings settings = wV.getSettings();
+    try {
+      WebSettings settings = wV.getSettings();
 
-    settings.setTextZoom(100);
-    settings.setSupportZoom(false);
+      settings.setTextZoom(100);
+      settings.setSupportZoom(false);
+    } catch (Exception e) {
+      callbackContext.error("failed");
 
-    callbackContext.success();
+      return;
+    }
+
+    callbackContext.success("font size has been resetted");
   }
 }
