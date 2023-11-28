@@ -14,7 +14,7 @@ import org.json.JSONException;
  * This class echoes a string called from JavaScript.
  */
 public class ResetFontSize extends CordovaPlugin {
-  protected WebView wW;
+  protected WebView wV;
 
   /**
    * Sets the context of the Command. This can then be used to do things like
