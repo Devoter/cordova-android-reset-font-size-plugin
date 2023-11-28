@@ -4,6 +4,9 @@
   <description>This cordova plugin prevents the webview from scaling font size due to Android font settings</description>
   <license>BSD 3-Clause License</license>
   <repo>https://github.com/Devoter/cordova-android-reset-font-size-plugin.git</repo>
+  <js-module src="www/reset-font-size.js" name="resetFontSize">
+    <clobbers target="navigator.resetFontSize"/>
+  </js-module>
   <engines>
     <engine name="cordova-electron" version="&gt;=3.0.0"/>
   </engines>

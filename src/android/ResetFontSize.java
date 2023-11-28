@@ -14,6 +14,8 @@ import org.json.JSONException;
  * This class echoes a string called from JavaScript.
  */
 public class ResetFontSize extends CordovaPlugin {
+  protected WebView wW;
+
   /**
    * Sets the context of the Command. This can then be used to do things like
    * get file paths associated with the Activity.
@@ -24,7 +26,7 @@ public class ResetFontSize extends CordovaPlugin {
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
 
-    WebView wV = (WebView) webView.getView();
+    wV = (WebView) webView.getView();
     WebSettings settings = wV.getSettings();
 
     settings.setTextZoom(100);
@@ -33,6 +35,19 @@ public class ResetFontSize extends CordovaPlugin {
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-    return true;
+    if ("reset".equals(action)) {
+      this.resetFontSize(callbackContext);
+    }
+
+    return false;
+  }
+
+  private void resetFontSize(CallbackContext callbackContext) {
+    WebSettings settings = wV.getSettings();
+
+    settings.setTextZoom(100);
+    settings.setSupportZoom(false);
+
+    callbackContext.success();
   }
 }
