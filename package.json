@@ -13,5 +13,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Devoter",
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "engines": {
+    "cordovaDependencies": {
+      "2.1.0": {
+        "cordova-electron": ">=3.0.0"
+      },
+      "3.0.0": {
+        "cordova": ">100"
+      }
+    }
+  }
 }
