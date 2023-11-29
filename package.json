@@ -1,6 +1,6 @@
 {
   "name": "cordova-android-reset-font-size-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "This cordova plugin prevents the webview from scaling font size due to Android font settings",
   "cordova": {
     "id": "cordova-android-reset-font-size-plugin",

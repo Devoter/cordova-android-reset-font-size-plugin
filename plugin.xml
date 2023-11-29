@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-android-reset-font-size-plugin" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-android-reset-font-size-plugin" version="0.1.0">
   <name>ResetFontSize</name>
   <description>This cordova plugin prevents the webview from scaling font size due to Android font settings</description>
   <license>BSD 3-Clause License</license>
