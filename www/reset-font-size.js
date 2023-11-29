@@ -1,7 +1,7 @@
 var exec = require('cordova/exec');
 
-module.exports = {
-  reset: function (successCallback, errorCallback) {
-    exec(successCallback, errorCallback, 'ResetFontSize', 'reset', []);
-  }
+module.exports = function () {
+  return new Promise(function (resolve, reject) {
+    exec(resolve, reject, 'ResetFontSize', 'reset', []);
+  });
 };

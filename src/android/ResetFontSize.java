@@ -11,7 +11,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 /**
- * This class echoes a string called from JavaScript.
+ * This class prevents the webview from scaling font size due to Android font
+ * settings.
  */
 public class ResetFontSize extends CordovaPlugin {
   protected WebView wV;
@@ -40,6 +41,11 @@ public class ResetFontSize extends CordovaPlugin {
     return false;
   }
 
+  /**
+   * Resets the font size.
+   *
+   * @param callbackContext The callback context object.
+   */
   private void resetFontSize(CallbackContext callbackContext) {
     wV.post(new Runnable() {
       public void run() {
